@@ -2,6 +2,10 @@ from django.shortcuts import render
 from .forms import UploadFileForm
 import pandas as pd
 
+def home(request):
+    return render(request, 'home.html')
+
+
 def upload_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
